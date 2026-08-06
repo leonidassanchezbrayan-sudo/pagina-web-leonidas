@@ -71,7 +71,7 @@ class handler(BaseHTTPRequestHandler):
                     "max_tokens": 400,
                     "temperature": 0.4,
                 },
-                timeout=25,
+                timeout=59,
             )
             r.raise_for_status()
             return r.json()["choices"][0]["message"]["content"].strip()
