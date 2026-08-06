@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leonidas Teotl</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">@leonidasteotl</p>
+    <h1>Leonidas Teotl</h1>
+    <p class="tagline">Un pedacito de todo lo que fui a ver. Vamos a seguir subiendo mas.</p>
+    <div class="links">
+      <a href="https://youtube.com/@leonidasteotl" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/leonidasteotl" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@leonidasteotl" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="seccion">
+    <h2>Sobre el canal</h2>
+    <p>Shorts de viajes y vida real: menos pantalla, mas horizonte. Contenido nuevo cada semana.</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Leonidas Teotl</p>
+</footer>
+
+<!-- Burbuja de chat -->
+<button id="chat-bubble" aria-label="Abrir chat">
+  <span class="bubble-icon">🤖</span>
+  <span class="bubble-label">Yo, Robot</span>
+</button>
+
+<div id="chat-panel" class="oculto">
+  <div class="chat-header">
+    <span>Yo, Robot</span>
+    <button id="chat-cerrar" aria-label="Cerrar chat">✕</button>
+  </div>
+  <div id="chat-mensajes" class="chat-mensajes">
+    <div class="msg bot">Hola, soy el asistente de este canal. Preguntame lo que quieras.</div>
+  </div>
+  <form id="chat-form">
+    <input id="chat-input" type="text" placeholder="Escribi tu mensaje..." autocomplete="off" required>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
