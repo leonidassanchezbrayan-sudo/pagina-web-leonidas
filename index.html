@@ -18,19 +18,92 @@
       <a href="https://instagram.com/leonidasteotl" target="_blank" rel="noopener">Instagram</a>
       <a href="https://tiktok.com/@leonidasteotl" target="_blank" rel="noopener">TikTok</a>
     </div>
+    <nav class="nav-secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#articulos">Artículos</a>
+    </nav>
+  </div>
+  <div class="hero-imagen">
+    <img src="https://picsum.photos/seed/leonidas-viaje/1400/700" alt="Foto de viaje (de prueba, cambiar por foto real)" loading="lazy">
   </div>
 </header>
 
 <main>
-  <section class="seccion">
-    <h2>Sobre el canal</h2>
-    <p>Shorts de viajes y vida real: menos pantalla, mas horizonte. Contenido nuevo cada semana.</p>
+  <section class="seccion bloque-imagen">
+    <div class="bloque-texto">
+      <h2>Sobre el canal</h2>
+      <p>Shorts de viajes y vida real: menos pantalla, mas horizonte. Contenido nuevo cada semana.</p>
+    </div>
+    <div class="bloque-foto">
+      <img src="https://picsum.photos/seed/leonidas-horizonte/900/900" alt="Foto de viaje (de prueba)" loading="lazy">
+    </div>
+  </section>
+
+  <section id="servicios" class="seccion">
+    <h2>Servicios</h2>
+    <p class="seccion-intro">Lo que armo para negocios que quieren estar disponibles 24/7 sin contratar a nadie más.</p>
+    <div class="tarjetas">
+      <article class="tarjeta">
+        <div class="tarjeta-foto">
+          <img src="https://picsum.photos/seed/portal-web/700/500" alt="" loading="lazy">
+        </div>
+        <div class="tarjeta-cuerpo">
+          <h3>Portal web</h3>
+          <p>Tu página propia, siempre activa, con tu catálogo real y un chat que responde solo.</p>
+          <button class="btn-agregar" data-item="Portal web" aria-pressed="false">+ Agregar al pedido</button>
+        </div>
+      </article>
+      <article class="tarjeta">
+        <div class="tarjeta-foto">
+          <img src="https://picsum.photos/seed/bot-whatsapp/700/500" alt="" loading="lazy">
+        </div>
+        <div class="tarjeta-cuerpo">
+          <h3>Bot de WhatsApp</h3>
+          <p>Un asistente con IA que contesta a tus clientes por WhatsApp, todo el día, todos los días.</p>
+          <button class="btn-agregar" data-item="Bot de WhatsApp" aria-pressed="false">+ Agregar al pedido</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="articulos" class="seccion">
+    <h2>Artículos</h2>
+    <p class="seccion-intro">Otros trabajos que hago aparte del portal y el bot.</p>
+    <div class="tarjetas">
+      <article class="tarjeta tarjeta-dorada">
+        <div class="tarjeta-foto">
+          <img src="https://picsum.photos/seed/edicion-video/700/500" alt="" loading="lazy">
+        </div>
+        <div class="tarjeta-cuerpo">
+          <h3>Edición de video</h3>
+          <p>Cortes, ritmo y color para contenido que retiene desde el primer segundo.</p>
+          <button class="btn-agregar" data-item="Edición de video" aria-pressed="false">+ Agregar al pedido</button>
+        </div>
+      </article>
+      <article class="tarjeta tarjeta-dorada">
+        <div class="tarjeta-foto">
+          <img src="https://picsum.photos/seed/consultoria-negocio/700/500" alt="" loading="lazy">
+        </div>
+        <div class="tarjeta-cuerpo">
+          <h3>Consultoría de negocio <span class="etiqueta-gratis">Gratis</span></h3>
+          <p>Nos reunimos, hacemos una transcripción de tu negocio y te digo dónde estás dejando recursos sobre la mesa. Sin costo, solo la reunión.</p>
+          <button class="btn-agregar" data-item="Consultoría de negocio (gratis)" aria-pressed="false">+ Agregar al pedido</button>
+        </div>
+      </article>
+    </div>
   </section>
 </main>
 
 <footer>
   <p>&copy; 2026 Leonidas Teotl</p>
 </footer>
+
+<!-- Carrito de pedido -->
+<button id="carrito-bubble" class="oculto" aria-label="Ver pedido y enviar por WhatsApp">
+  <span class="carrito-icon">🛒</span>
+  <span class="bubble-label">Enviar pedido</span>
+  <span id="carrito-contador">0</span>
+</button>
 
 <!-- Burbuja de chat -->
 <button id="chat-bubble" aria-label="Abrir chat">

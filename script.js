@@ -1,3 +1,39 @@
+// --- Carrito de pedido (junta lo marcado y arma un WhatsApp con todo) ---
+const NUMERO_WHATSAPP = "593963348763";
+const pedido = new Set();
+const botonesAgregar = document.querySelectorAll(".btn-agregar");
+const carritoBubble = document.getElementById("carrito-bubble");
+const carritoContador = document.getElementById("carrito-contador");
+
+function actualizarCarrito() {
+  carritoContador.textContent = pedido.size;
+  carritoBubble.classList.toggle("oculto", pedido.size === 0);
+}
+
+botonesAgregar.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const item = boton.dataset.item;
+    const yaEsta = pedido.has(item);
+    if (yaEsta) {
+      pedido.delete(item);
+      boton.setAttribute("aria-pressed", "false");
+      boton.textContent = "+ Agregar al pedido";
+    } else {
+      pedido.add(item);
+      boton.setAttribute("aria-pressed", "true");
+      boton.textContent = "✓ Agregado";
+    }
+    actualizarCarrito();
+  });
+});
+
+carritoBubble.addEventListener("click", () => {
+  if (pedido.size === 0) return;
+  const lista = [...pedido].map((item) => `- ${item}`).join("\n");
+  const texto = `Hola, quiero info/presupuesto sobre:\n${lista}`;
+  window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+});
+
 const burbuja = document.getElementById("chat-bubble");
 const panel = document.getElementById("chat-panel");
 const cerrar = document.getElementById("chat-cerrar");
