@@ -21,6 +21,7 @@
     <nav class="nav-secciones">
       <a href="#servicios">Servicios</a>
       <a href="#articulos">Artículos</a>
+      <a href="#biotipo">Tu biotipo</a>
     </nav>
   </div>
   <div class="hero-imagen">
@@ -63,6 +64,15 @@
           <button class="btn-agregar" data-item="Bot de WhatsApp" aria-pressed="false">+ Agregar al pedido</button>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section id="biotipo" class="seccion">
+    <h2>Determina tu biotipo</h2>
+    <p class="seccion-intro">12 preguntas rápidas (menos de 3 minutos). Al final te decimos tu biotipo primario y tu subdominante.</p>
+    <div id="biotipo-quiz" class="biotipo-quiz">
+      <div id="biotipo-preguntas"></div>
+      <div id="biotipo-resultado" class="biotipo-resultado oculto"></div>
     </div>
   </section>
 
@@ -125,6 +135,8 @@
   </form>
 </div>
 
+<script src="biotipo-preguntas.js"></script>
+<script src="biotipo-quiz.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
