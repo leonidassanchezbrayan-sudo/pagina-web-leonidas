@@ -34,6 +34,20 @@ carritoBubble.addEventListener("click", () => {
   window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
 });
 
+// Paquete Combo: la burbuja habla directo con el backend del kit de WhatsApp
+// (mismas conversaciones/leads que WhatsApp) en vez de la funcion propia de
+// Vercel. TODO: reemplazar por el dominio real de EasyPanel una vez confirmado.
+const KIT_BACKEND_URL = "https://TU-DOMINIO-DE-EASYPANEL.easypanel.host/api/web-chat";
+
+function sessionIdVisitante() {
+  let id = localStorage.getItem("chat_session_id");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("chat_session_id", id);
+  }
+  return id;
+}
+
 const burbuja = document.getElementById("chat-bubble");
 const panel = document.getElementById("chat-panel");
 const cerrar = document.getElementById("chat-cerrar");
@@ -69,10 +83,10 @@ form.addEventListener("submit", async (e) => {
   const cargando = agregarMensaje("escribiendo...", "bot cargando");
 
   try {
-    const resp = await fetch("/api/chat", {
+    const resp = await fetch(KIT_BACKEND_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mensaje: pregunta }),
+      body: JSON.stringify({ mensaje: pregunta, sessionId: sessionIdVisitante() }),
     });
     const datos = await resp.json();
     cargando.remove();
