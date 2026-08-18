@@ -37,7 +37,7 @@ carritoBubble.addEventListener("click", () => {
 // Paquete Combo: la burbuja habla directo con el backend del kit de WhatsApp
 // (mismas conversaciones/leads que WhatsApp) en vez de la funcion propia de
 // Vercel. TODO: reemplazar por el dominio real de EasyPanel una vez confirmado.
-const KIT_BACKEND_URL = "https://TU-DOMINIO-DE-EASYPANEL.easypanel.host/api/web-chat";
+const KIT_BACKEND_URL = "https://proyectos-web-leonidas-bot-whatsapp.wfaqlk.easypanel.host/api/web-chat";
 
 function sessionIdVisitante() {
   let id = localStorage.getItem("chat_session_id");
